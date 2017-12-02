@@ -4,8 +4,8 @@ import hackathon_protocol
 import math, os
 
 
-USERNAME="the_Heartbreakers"
-PASSWORD="94ba670a"
+USERNAME="devman"
+PASSWORD="devmanorg2017"
 
 CONNECT_IP = os.environ.get("HACKATHON_CONNECT_IP") or "127.0.0.1"
 CONNECT_PORT = int(os.environ.get("HACKATHON_CONNECT_PORT") or 12345)
@@ -20,6 +20,10 @@ def calc_volatility(mid_prices, window_size):
     window = mid_prices[-window_size:]
     mean = sum(window) / window_size
     return math.sqrt(sum([(x - mean)**2 for x in window]) / (window_size - 1))
+
+
+def calc_volatility_new(row):
+
 
 
 class MyClient(hackathon_protocol.Client):
